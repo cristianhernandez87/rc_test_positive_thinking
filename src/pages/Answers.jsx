@@ -5,7 +5,7 @@ export function loader() {
     const answers = [
         {
             user_id: 873,
-            notes: 'Pellentesque volutpat laoreet consequat. Maecenas bibendum tortor risus, at dapibus nisi pellentesque at. Phasellus quam massa, mattis vitae tristique ut, suscipit nec odio. Mauris placerat libero ac dolor rutrum placerat. Proin et semper urna, non blandit tellus. Etiam volutpat interdum quam nec fringilla. Phasellus facilisis est nec enim tristique, at vehicula lectus iaculis.',
+            comments: 'Pellentesque volutpat laoreet consequat. Maecenas bibendum tortor risus, at dapibus nisi pellentesque at. Phasellus quam massa, mattis vitae tristique ut, suscipit nec odio. Mauris placerat libero ac dolor rutrum placerat. Proin et semper urna, non blandit tellus. Etiam volutpat interdum quam nec fringilla. Phasellus facilisis est nec enim tristique, at vehicula lectus iaculis.',
             questions: [
 
                 {
@@ -42,7 +42,7 @@ export function loader() {
         },
         {
             user_id: 874,
-            notes: '',
+            comments: '',
             questions: [
 
                 {
@@ -79,7 +79,7 @@ export function loader() {
         },
         {
             user_id: 382,
-            notes: 'Pellentesque volutpat laoreet consequat. Maecenas bibendum tortor risus, at dapibus nisi pellentesque at. Phasellus quam massa, mattis vitae tristique ut, suscipit nec odio. Mauris placerat libero ac dolor rutrum placerat. Proin et semper urna, non blandit tellus. Etiam volutpat interdum quam nec fringilla. Phasellus facilisis est nec enim tristique, at vehicula lectus iaculis.',
+            comments: 'Pellentesque volutpat laoreet consequat. Maecenas bibendum tortor risus, at dapibus nisi pellentesque at. Phasellus quam massa, mattis vitae tristique ut, suscipit nec odio. Mauris placerat libero ac dolor rutrum placerat. Proin et semper urna, non blandit tellus. Etiam volutpat interdum quam nec fringilla. Phasellus facilisis est nec enim tristique, at vehicula lectus iaculis.',
             questions: [
 
                 {
