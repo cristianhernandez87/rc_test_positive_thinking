@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "I am satisfied with my roles and responsibilities."
+    },
+    {
+      "id": 2,
+      "question": "I feel like I have a healthy work/life balance."
+    },
+    {
+      "id": 3,
+      "question": "I feel comfortable working and interacting with the colleagues on my team."
+    },
+    {
+      "id": 4,
+      "question": "I like my work environment, and I believe it helps me perform at my best."
+    },
+    {
+      "id": 5,
+      "question": "My direct manager gives me necessary support and clear objectives."
+    }
+  ]
+}

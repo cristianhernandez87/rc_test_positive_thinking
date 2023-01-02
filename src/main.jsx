@@ -4,7 +4,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Index from './pages/Index'
-import Questions from './pages/Questions'
+import Questions, { loader as questionsLoader } from './pages/Questions'
+import Answers, { loader as answersLoader } from './pages/Answers'
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,17 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Index />
+        element: <Index />,
       },
       {
         path: '/questions',
-        element: <Questions />
+        element: <Questions />,
+        loader: questionsLoader
+      },
+      {
+        path: '/answers',
+        element: <Answers />,
+        loader: answersLoader
       }
     ]
   }
