@@ -7,6 +7,7 @@ import Index from './pages/Index'
 import Questions, { loader as questionsLoader, action as saveQuestions } from './pages/Questions'
 import Answers, { loader as answersLoader } from './pages/Answers'
 import ErrorPage from './pages/ErrorPage'
+import Thks from './pages/Thks'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         element: <Answers />,
         loader: answersLoader,
         errorElement: <ErrorPage />
+      },
+      {
+        path: '/thks',
+        element: <Thks />,
       }
     ]
   }

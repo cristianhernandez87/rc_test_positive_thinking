@@ -20,7 +20,7 @@ npm install -g json-server
 
 To run local server
 ```
-json-server --watch
+json-server db.json --watch
 ```
 
 To run the project in developer mode (browser)

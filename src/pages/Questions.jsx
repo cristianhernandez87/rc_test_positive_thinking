@@ -1,4 +1,4 @@
-import { useLoaderData, useActionData, Form } from "react-router-dom"
+import { useLoaderData, useActionData, Form, redirect } from "react-router-dom"
 import { getQuestions, addAnswer } from "../data/data"
 import Question from "../components/Question"
 import Error from "../components/Error"
@@ -18,11 +18,9 @@ export async function action({request}) {
         return errors
     }
     
-    const questions = []
-    console.log(questions)
     addAnswer(data)
 
-    return {}
+    return redirect('/thks')
 }
 
 export function loader() {
@@ -34,7 +32,6 @@ function Questions() {
     
     const errors = useActionData()
     const questions = useLoaderData()
-    // console.log(questions)
 
     return (
         <div className="w-full lg:w-1/2 p-2 lg:pl-8 lg:pr-4 lg:mt-5 overflow-auto">
