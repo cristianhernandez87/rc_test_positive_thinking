@@ -1,6 +1,4 @@
-function Answer({answer}) {
-    
-    
+function Answer({answer}) {    
     return (
         <tr className="border-b">
             <td className="px-6 py-3 w-1/12">
@@ -12,14 +10,14 @@ function Answer({answer}) {
                         key={e.id}
                         className="px-6 py-3">
                         <p className="text-gray-600 font-bold mb-1">{e.question}</p>
-                        <p className="m-0">Ranking: {e.ranking}</p>
-                        <p className="m-0">Answer: {e.answer_q}</p>
+                        <p className="m-0">Ranking: {e.mood}</p>
+                        <p className="m-0">Answer: {e.comment}</p>
                     </div>
                 ))}
             </td>
 
             <td className="px-6 py-3 w-3/12">
-                <p className="m-0">{answer.comments}</p>
+                <p className="m-0">{answer.notes}</p>
             </td>
         </tr>
     )

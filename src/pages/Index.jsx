@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import face_happy from '../assets/img/Happy.svg'
 import face_neutral from '../assets/img/Neutral.svg'
@@ -6,16 +6,7 @@ import face_unhappy from '../assets/img/Unhappy.svg'
 import face_veryhappy from '../assets/img/VeryHappy.svg'
 import face_veryunhappy from '../assets/img/VeryUnhappy.svg'
 
-export function loader() {
-
-    return 'desde loader'
-}
-
 function Index() {
-
-    const data = useLoaderData()
-
-    console.log(data)
 
     return (
         <div className="w-full p-2 flex md:items-center md:justify-center">

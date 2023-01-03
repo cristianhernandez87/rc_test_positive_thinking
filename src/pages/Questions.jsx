@@ -1,61 +1,74 @@
-import { useLoaderData } from "react-router-dom"
-
+import { useLoaderData, useActionData, Form } from "react-router-dom"
+import { getQuestions, addAnswer } from "../data/data"
 import Question from "../components/Question"
+import Error from "../components/Error"
+
+export async function action({request}) {
+    
+    const formData = await request.formData()
+    const data = Object.fromEntries(formData)
+    
+    // validate
+    const errors = []
+    if(Object.values(data).includes('')) {
+        errors.push('Mood is required')
+    }
+    
+    if(Object.keys(errors).length) {
+        return errors
+    }
+    
+    const questions = []
+    console.log(questions)
+    addAnswer(data)
+
+    return {}
+}
 
 export function loader() {
-    const questions = [
-        {
-          id: 1,
-          question: "I am satisfied with my roles and responsibilities.",
-        },
-        {
-          id: 2,
-          question: "I feel like I have a healthy work/life balance.",
-        },
-        {
-          id: 3,
-          question: "I feel comfortable working and interacting with the colleagues on my team.",
-        },
-        {
-          id: 4,
-          question: "I like my work environment, and I believe it helps me perform at my best.",
-        },
-        {
-          id: 5,
-          question: "My direct manager gives me necessary support and clear objectives.",
-        }
-      ]
-
+    const questions = getQuestions()
     return questions
 }
 
 function Questions() {
-
+    
+    const errors = useActionData()
     const questions = useLoaderData()
+    // console.log(questions)
 
     return (
         <div className="w-full lg:w-1/2 p-2 lg:pl-8 lg:pr-4 lg:mt-5 overflow-auto">
-            { questions.map(question => (
-                <Question
-                    key={question.id}
-                    question={question}
-                />
-            ))}
+            { errors?.length && errors.map((error, i) => <Error key={i}>{error}</Error>)}
+            <Form
+                method="post"
+            >
+                { questions.map(question => (
+                    <Question
+                        key={question.id}
+                        question={question}
+                    />
+                ))}
+                <div className="card rounded p-3 shadow bg-teal-800 mb-5">
+                    <label
+                        className="font-bold text-xl text-white mb-2 w-full block"
+                        htmlFor="notes"
+                    >Would you like to add anything?</label>
+                    <textarea
+                        id="notes"
+                        className="mt-2 block w-full p-3 bg-gray-50 h-40 border-2 border-emerald-400"
+                        placeholder="Express yourself freely and safely. This will always remain anonymous."
+                        name="notes"
+                    />
+                </div>
 
-            <div
-                className="card rounded p-3 shadow bg-teal-800 mb-5">
-                <label
-                    className="font-bold text-xl text-white mb-2 w-full block"
-                    htmlFor="notes"
-                >Would you like to add anything?</label>
-                <textarea
-                    id="notes"
-                    className="mt-2 block w-full p-3 bg-gray-50 h-40 border-2 border-emerald-400"
-                    placeholder="Express yourself freely and safely. This will always remain anonymous."
-                    name="notes"
-                    // defaultValue={costumer?.notes}
-                />
-            </div>
+                <div className="w-full mb-6">
+                    <input
+                        type="submit"
+                        className="cursor-pointer w-full bg-teal-300 p-3 uppercase font-bold text-white text-lg hover:bg-blue-700"
+                        value="Send Answers"
+                    />
+                </div>
+            </Form>
         </div>
     )
 }
